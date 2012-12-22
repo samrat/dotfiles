@@ -7,5 +7,4 @@
            ;; Play/pause
            '(XF86AudioPlay . "mpc toggle")
            '(XF86AudioNext . "mpc next")
-           '(XF86AudioPrev . "mpc prev")
-           ))
+           '(XF86AudioPrev . "mpc prev")))
