@@ -1,0 +1,3 @@
+mpd_music_dir = "/vault/Music"
+mpd_host = "localhost"
+mpd_port = "6600"
