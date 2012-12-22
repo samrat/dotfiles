@@ -1,4 +1,4 @@
-set editor = "vim -f +/^$"
+set editor = "emacs -nw"
 set folder = ~/.mail               # mailbox location
 set mbox_type = Maildir
 set spoolfile = "+samratme/Inbox"
@@ -6,7 +6,7 @@ set postponed = "+samratme/Drafts"
 set from = "samrat@samrat.me"
 
 # Alternate email addresses.
-alternates samratmansingh@gmail.com
+#alternates samratmansingh@gmail.com
 
 #set smtp_url = "smtp://samrat@samrat.me@smtp.zoho.com:465/"
 set sendmail    = "/usr/bin/msmtp"

@@ -1,11 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-PID=$(pgrep offlineimap)
+PID=`cat ~/.offlineimap/pid`
+ps aux | grep "[ ]$PID" && kill $PID
 
-# the only time offlineimap has been still running after 3 minutes for 
-# me is if it's frozen... we'll kill it and resync
-[[ -n "$PID" ]] && kill $PID
+function sync_normal {
+    echo "NORMAL Sync"
+    offlineimap -o -u quiet
+}
+function sync_quick {
+    echo "QUICK Sync"
+    offlineimap -o -q -u quiet
+}
 
-offlineimap -o -u quiet &>/dev/null &
+# This is silly.
+python -c'import sys, random; sys.exit(random.randint(0, 5))' && sync_normal || sync_quick
 
 exit 0
