@@ -1,1 +1,8 @@
-/home/samrat/.cdmrc
+binlist=(
+  "~/.xinitrc"                                  # Launch your X session,
+  "/bin/bash --login"                           # or just execute your shell,
+  "/usr/bin/fbterm"                             # or start a frame buffer console,
+  "/usr/bin/cdm ~/.submenu.cdmrc"  # or go to a submenu :)
+)
+namelist=("X session" Console FBTerm "Sub menu")
+flaglist=(X C C C)

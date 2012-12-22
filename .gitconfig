@@ -1,1 +1,8 @@
-/home/samrat/.gitconfig
+[user]
+	name = Samrat Man Singh
+        email = samratmansingh@gmail.com
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
