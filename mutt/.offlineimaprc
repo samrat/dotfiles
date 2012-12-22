@@ -1,0 +1,32 @@
+[general]
+ui = TTY.TTYUI
+accounts = samratme
+pythonfile=~/.mutt/offlineimap.py
+fsync = false
+
+[Account samratme]
+localrepository = samratme-Local
+remoterepository = samratme-Remote
+
+[Repository samratme-Local]
+type = Maildir
+localfolders = ~/.mail/samratme
+nametrans = lambda folder: {'drafts':  '/Drafts',
+                            'sent':    '/Sent',
+                            'trash':   '/Trash',
+                            }.get(folder, folder)
+
+[Repository samratme-Remote]
+maxconnections = 1
+type = IMAP
+remotehost = imap.zoho.com
+remoteport = 993 
+remoteuser = samrat@samrat.me
+remotepasseval = keyring.get_password("imap.zoho.com", "samrat@samrat.me")
+realdelete = no
+nametrans = lambda folder: {'/Drafts':    'drafts',
+                            '/Sent':      'sent',
+                            '/Trash':     'trash',
+                            }.get(folder, folder)
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
