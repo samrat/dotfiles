@@ -43,8 +43,9 @@ export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7.1/site-packages"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 export EDITOR="vim"
 export BROWSER="chromium"
-#autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+
+#Z
+source /usr/bin/z.sh
 
  #TMUX
 if which tmux 2>&1 >/dev/null; then

@@ -7,5 +7,7 @@ systemd --user &
 
 dropboxd&
 xbindkeys
+dunst&
+~/bin/low-battery-notify&
 
 exec xmonad

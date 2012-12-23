@@ -1,4 +1,5 @@
 emacs.font: Inconsolata-dz for Powerline-12
+dmenu.font: Inconsolata-dz for Powerline-12
 
 URxvt.scrollBar: off
 URxvt*termName: screen-256color

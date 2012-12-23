@@ -1,0 +1,3 @@
+#!/bin/bash
+
+notify-send "Now Playing" "`mpc | head -n 1`" -t 1000
