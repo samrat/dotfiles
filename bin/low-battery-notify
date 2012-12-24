@@ -2,14 +2,16 @@
 
 # Configuration
 interval=120    #in seconds
-critical_level=10    #percent
+critical_level=5    #percent
+low_battery=10
 #icon="/usr/share/icons/Tango/48x48/devices/battery.png"     #notification icon
 
 while true
 do
     if [ "$(acpi -a | grep -o off)" == "off" ]; then
         battery_level=`acpi -b | sed 's/.*[dg], //g;s/\%,.*//g'`
-        [ $battery_level -le $critical_level ] && \
+        
+        [ $battery_level -le $low_battery ] && \
         notify-send -u critical -i "$icon" -t 15000 \
         "Battery level is low!" "Only $battery_level% of the charge remains."
     fi

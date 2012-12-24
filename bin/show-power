@@ -1,0 +1,9 @@
+#!/bin/bash
+ac_status="on"
+if [ "$(acpi -a | grep -o off)" == "off" ]; then
+    ac_status="off"
+fi
+
+battery_level=`acpi -b | sed 's/.*[dg], //g;s/\%,.*//g'`
+
+notify-send "Power status" "$battery_level% , $ac_status" -t 2000
