@@ -10,4 +10,8 @@ xbindkeys
 dunst&
 ~/bin/low-battery-notify&
 
+# Random wallpaper each time X starts
+find ~/.wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
+    shuf -n1 -z | xargs -0 feh --bg-max
+
 exec xmonad
