@@ -11,4 +11,6 @@
            '((mod4 g) . "~/bin/music-choose")
            '((mod4 b) . "~/bin/show-power")
            ;; Lock screen
-           '(XF86Calculator . "xlock -mode blank")))
+           '(XF86Calculator . "xlock -mode blank")
+           ;; Dropbox status
+           '((mod4 d) . "~/bin/dropbox-status")))

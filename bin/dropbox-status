@@ -1,0 +1,3 @@
+#!/bin/bash
+
+notify-send "Dropbox:" "`dropbox status | head -n 1`" -t 1500
