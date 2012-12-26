@@ -24,7 +24,7 @@ fi
 # You may find it helpful to bind these commands to keystrokes in
 # addition to this script:
 
-# notify-send "Now Playing" "`mpc | head -n 1`"
+notify-send "Now Playing" "`mpc | head -n 1`"
 
 ##!/usr/bin/env ruby
 # current = `mpc`.split("\n").first
