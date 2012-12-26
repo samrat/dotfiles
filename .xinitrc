@@ -6,6 +6,7 @@ fi
 systemd --user &
 
 dropboxd&
+urxvtd&
 xbindkeys
 dunst&
 ~/bin/low-battery-notify&

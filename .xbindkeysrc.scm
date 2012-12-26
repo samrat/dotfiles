@@ -13,4 +13,13 @@
            ;; Lock screen
            '(XF86Calculator . "xlock -mode blank")
            ;; Dropbox status
-           '((mod4 d) . "~/bin/dropbox-status")))
+           '((mod4 d) . "~/bin/dropbox-status")
+           
+           ;; Weechat
+           '((mod4 i) . "urxvtc -e bash -c 'weechat-curses'")
+
+           ;; Ncmpcpp
+           '((mod4 XF86AudioPlay) . "urxvtc -e bash -c 'ncmpcpp'")
+
+           ;; Print screen
+           '(print . "scrot")))
