@@ -1,0 +1,5 @@
+# ~/.mutt/mailcap
+
+# PDF
+
+application/pdf; evince %s
