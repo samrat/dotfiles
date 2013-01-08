@@ -8,3 +8,9 @@ commitsubrepos = False
 prompt = ~/code/dotfiles/hg/hg-prompt/prompt.py
 hgext.bookmarks =
 hggit = 
+schemes = 
+
+[schemes]
+bbs = ssh://hg@bitbucket.org/
+bbss = ssh://hg@bitbucket.org/samrat/
+ghs = git+ssh://git@github.com/
