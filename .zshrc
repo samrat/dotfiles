@@ -44,10 +44,10 @@ export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 export EDITOR="vim"
 export BROWSER="chromium"
 
-#Z
+# Z
 source /usr/bin/z.sh
 
- #TMUX
+# TMUX
 if which tmux 2>&1 >/dev/null; then
         #if not inside a tmux session, and if no session is started, start a new session
         test -z "$TMUX" && (tmux attach || tmux new-session)
@@ -64,3 +64,7 @@ alias g='git '
 alias serve='python2 -m SimpleHTTPServer '
 
 alias c='clear'
+
+emn() {
+    emacsclient -e "(new-frame)"
+}

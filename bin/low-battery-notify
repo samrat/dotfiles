@@ -2,7 +2,7 @@
 
 # Configuration
 interval=120    #in seconds
-critical_level=5    #percent
+critical_level=8    #percent
 low_battery=10
 #icon="/usr/share/icons/Tango/48x48/devices/battery.png"     #notification icon
 

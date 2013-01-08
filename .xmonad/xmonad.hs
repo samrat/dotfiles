@@ -6,6 +6,6 @@ main = xmonad $ defaultConfig
        modMask = mod4Mask
        , layoutHook = smartBorders (layoutHook defaultConfig)
        , focusFollowsMouse = False
-       , terminal = "urxvt"
+       , terminal = "urxvtc"
        , borderWidth = 1
        }

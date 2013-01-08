@@ -1,8 +1,8 @@
 emacs.font: Inconsolata-dz for Powerline-12
-dmenu.font: Inconsolata-dz for Powerline-12
+dmenu.font: Inconsolata-dz for Powerline:pixelsize=17
 
 URxvt.scrollBar: off
-URxvt*termName: screen-256color
+URxvt*termName: rxvt-256color
 URxvt.imLocale: en_US.utf8
 URxvt.foreground:white
 URxvt.background:black
@@ -11,11 +11,11 @@ URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      chromium
 URxvt.matcher.button:   1
 
-URxvt*font:                 xft:Mensch for Powerline:regular:size=11
-URxvt*imFont:               xft:Mensch for Powerline:regular:size=11
-URxvt*boldFont:             xft:Mensch for Powerline:bold:size=11
-URxvt*italicFont:           xft:Mensch for Powerline:italic:size=11
-URxvt*boldItalicFont:       xft:Mensch for Powerline:bold:italic:size=11
+urxvt.font: xft:Menlo for Powerline:pixelsize=15
+! URxvt*imFont:               xft:Mensch for Powerline:regular:size=11
+! URxvt*boldFont:             xft:Mensch for Powerline:bold:size=11
+! URxvt*italicFont:           xft:Mensch for Powerline:italic:size=11
+! URxvt*boldItalicFont:       xft:Mensch for Powerline:bold:italic:size=11
 
 ! black
 URxvt*color0  : #000000

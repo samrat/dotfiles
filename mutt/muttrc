@@ -32,7 +32,7 @@ set edit_headers
 set realname = "Samrat Man Singh"
 set sort = threads
 set sort_aux = reverse-last-date-received
-mailboxes +samratme/Inbox +samratme/Sent +samratme/Drafts +samratme/Clojure +samratme/flask +samratme/pelican +samratme/Trash +samratme/Archives
+mailboxes +samratme/Inbox +samratme/Sent +samratme/Drafts +samratme/Clojure +samratme/flask +samratme/pelican +samratme/Trash
 
 #set smtp_url = "smtp://smtp.zoho.com:465"
 #set smtp_authenticators="digest-md5:cram-md5"
@@ -93,7 +93,7 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Quickly change mailboxes
 macro index \' "<change-folder>+samratme/Inbox<enter>"   "go to INBOX"
-macro index \" "<change-folder>+samratme/Archives<enter>" "go to archive"
+#macro index \" "<change-folder>+samratme/Archives<enter>" "go to archive"
 
 # Search with notmuch
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py -G ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
@@ -204,6 +204,6 @@ bind index p recall-message
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
-macro index A "<save-message>+samratme/Archives"
+#macro index A "<save-message>+samratme/Archives"
 
 #folder-hook GMail/* source ~/.mutt/gmail.muttrc
