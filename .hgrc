@@ -9,8 +9,67 @@ prompt = ~/code/dotfiles/hg/hg-prompt/prompt.py
 hgext.bookmarks =
 hggit = 
 schemes = 
+graphlog = 
+color =
+
+[alias]
+slog = log --template '{rev}:{node|short} {desc|firstline}\n'
+# Log shortcuts --------------------------------------------------------------------
+#
+# Each of these can be used with -v to add a bit more info.
+
+# Datelog: short, pretty hg log with dates.
+dlog = log --style=$HOME/code/dotfiles/mercurial/map-cmdline.dlog
+_ = dlog -l15
+__ = _ -l100000000
+o_ = outgoing -n --style=$HOME/code/dotfiles/mercurial/map-cmdline.dlog
+i_ = incoming -n --style=$HOME/code/dotfiles/mercurial/map-cmdline.dlog
+
+# Shortlog: short, pretty hg log.
+slog = log --style=$HOME/code/dotfiles/mercurial/map-cmdline.slog
+. = slog -l15
+.. = . -l100000000
+o. = outgoing -n --style=$HOME/code/dotfiles/mercurial/map-cmdline.slog
+i. = incoming -n --style=$HOME/code/dotfiles/mercurial/map-cmdline.slog
+
+# Short graphlog: short, pretty hg log with a graph.
+sglog = glog --style=$HOME/code/dotfiles/mercurial/map-cmdline.sglog
+, = sglog -l7
+,, = , -l100000000
+o, = outgoing --graph --style=$HOME/code/dotfiles/mercurial/map-cmdline.sglog
+i, = incoming --graph --style=$HOME/code/dotfiles/mercurial/map-cmdline.sglog
+
+
+# hg n .     -- show a summary of rev . without diff.
+# hg show .  -- show a summary of rev . with diff.
+nlog = log --style=$HOME/code/dotfiles/mercurial/map-cmdline.nlog
+n = nlog -vr
+show = nlog --color=always -vpr
+
+# Simple glog command that doesn't look bad and doesn't require my CLI templates.
+gl = glog -l10 --template='\033[0;33m{rev}\033[0m {desc|firstline|strip} \033[0;35m{branches}\033[0m \033[0;33m{tags}\033[0m\n\033[1;30m({date|age} by {author|person})\033[0m\n\n'
 
 [schemes]
 bbs = ssh://hg@bitbucket.org/
 bbss = ssh://hg@bitbucket.org/samrat/
 ghs = git+ssh://git@github.com/
+
+[color]
+status.modified = cyan
+status.added = green
+status.removed = red
+status.deleted = yellow bold underline
+status.unknown = magenta bold underline
+status.ignored = black bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
+
+[diff]
+git = True
