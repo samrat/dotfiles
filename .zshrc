@@ -65,6 +65,5 @@ alias serve='python2 -m SimpleHTTPServer '
 
 alias c='clear'
 
-emn() {
-    emacsclient -e "(new-frame)"
-}
+alias e=emacsclient -t
+alias ec=emacsclient -c
