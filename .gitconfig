@@ -8,3 +8,5 @@
         status = auto
 [push]
 	default = simple
+[alias]
+	lg = log --graph --oneline --decorate --abbrev-commit
