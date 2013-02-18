@@ -12,6 +12,7 @@
                       starter-kit-bindings
                       starter-kit-eshell
                       evil
+                      evil-leader
                       projectile
                       nrepl
                       geiser
@@ -23,13 +24,11 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; Activate evil-mode
-(evil-mode 1)
-
 ;; Color theme
 (load-theme 'zenburn t)
-
-(add-to-list 'load-path "/home/samrat/.emacs.d/non-elpa/powerline")
+(add-to-list 'load-path "/home/samrat/.emacs.d/vendor/powerline")
+(load "/home/samrat/.emacs.d/config/samrat-evil.el")
+(load "/home/samrat/.emacs.d/config/samrat-erc.el")
 (require 'powerline)
 (powerline-default)
 
