@@ -11,4 +11,5 @@
   "b" 'switch-to-buffer
   "ci" 'evilnc-comment-or-uncomment-lines
   "cc" 'evilnc-comment-or-uncomment-to-the-line
+  "ln" 'linum-mode
   "k" 'kill-buffer)
