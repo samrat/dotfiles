@@ -1,17 +1,17 @@
 (require 'erc)
 
-(setq erc-track-exclude-types '("NICK" "JOIN" "LEAVE" "QUIT" "PART"
-                                "301"   ; away notice
-                                "305"   ; return from awayness
-                                "306"   ; set awayness
-                                "324"   ; modes
-                                "329"   ; channel creation date
-                                "332"   ; topic notice
-                                "333"   ; who set the topic
-                                "353"   ; Names notice
-                                ))
-
 (setq erc-prompt ">"
+      erc-hide-list '("NICK" "JOIN" "LEAVE" "QUIT" "PART")
+      erc-track-exclude-types (append erc-hide-list '(
+                                                     "301"   ; away notice
+                                                     "305"   ; return from awayness
+                                                     "306"   ; set awayness
+                                                     "324"   ; modes
+                                                     "329"   ; channel creation date
+                                                     "332"   ; topic notice
+                                                     "333"   ; who set the topic
+                                                     "353"   ; Names notice
+                                                     ))
       erc-fill-column 75
       erc-header-line-format nil
       erc-lurker-threshold-time 3600
