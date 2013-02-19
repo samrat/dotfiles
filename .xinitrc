@@ -9,6 +9,7 @@ dropboxd&
 urxvtd&
 xbindkeys
 dunst&
+unclutter&
 ~/bin/low-battery-notify&
 
 # Random wallpaper each time X starts
