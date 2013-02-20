@@ -28,9 +28,11 @@
 (load-theme 'zenburn t)
 (add-to-list 'load-path "/home/samrat/.emacs.d/config")
 (add-to-list 'load-path "/home/samrat/.emacs.d/vendor/powerline")
+
 (require 'samrat-evil)
 (require 'samrat-erc)
 (require 'samrat-org)
+(require 'samrat-clojure)
 
 (require 'server)
 (unless (server-running-p)
@@ -41,14 +43,8 @@
 
 ;; Rainbow delimiters
 (require 'rainbow-delimiters)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'geiser-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'nrepl-interaction-mode-hook
-  'nrepl-turn-on-eldoc-mode)
-
-(add-hook 'nrepl-mode-hook 'paredit-mode)
 (add-hook 'geiser-mode-hook 'paredit-mode)
 
 ;; Find file
@@ -56,24 +52,12 @@
 (projectile-global-mode)
 (global-set-key (kbd "C-c f") 'projectile-find-file)
 
-;; Clojurescript is Clojure too!
-(add-to-list 'auto-mode-alist '("\\.cljs" . clojure-mode))
-
-;; Mutt support.                                                                                                                                                          
+;; Mutt support.
 (setq auto-mode-alist
       (append
        '(("/tmp/mutt.*" . mail-mode)
          )
        auto-mode-alist))
-
-(require 'compile)
-;; A convenient command to run "lein kibit" in the project to which
-;; the current emacs buffer belongs to.
-(defun kibit ()
-  "Run kibit on the current project.
-Display the results in a hyperlinked *compilation* buffer."
-  (interactive)
-  (compile "lein kibit"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
