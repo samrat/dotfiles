@@ -26,9 +26,16 @@
 
 ;; Color theme
 (load-theme 'zenburn t)
+(add-to-list 'load-path "/home/samrat/.emacs.d/config")
 (add-to-list 'load-path "/home/samrat/.emacs.d/vendor/powerline")
-(load "/home/samrat/.emacs.d/config/samrat-evil.el")
-(load "/home/samrat/.emacs.d/config/samrat-erc.el")
+(require 'samrat-evil)
+(require 'samrat-erc)
+(require 'samrat-org)
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
 (require 'powerline)
 (powerline-default)
 
@@ -38,6 +45,8 @@
 (add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'geiser-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'nrepl-interaction-mode-hook
+  'nrepl-turn-on-eldoc-mode)
 
 (add-hook 'nrepl-mode-hook 'paredit-mode)
 (add-hook 'geiser-mode-hook 'paredit-mode)

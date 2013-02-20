@@ -12,4 +12,7 @@
   "ci" 'evilnc-comment-or-uncomment-lines
   "cc" 'evilnc-comment-or-uncomment-to-the-line
   "ln" 'linum-mode
+  "nr" 'nrepl-jack-in
   "k" 'kill-buffer)
+
+(provide 'samrat-evil)

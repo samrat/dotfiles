@@ -49,3 +49,5 @@
 
 (defun ercn-send-notification (nick message)
   (notify (concat nick " said:") message))
+
+(provide 'samrat-erc)
