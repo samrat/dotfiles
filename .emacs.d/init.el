@@ -17,6 +17,8 @@
                       nrepl
                       geiser
                       rainbow-delimiters
+                      auto-complete
+                      ac-nrepl
                       zenburn-theme)
   "A list of packages to ensure are installed at launch.")
 
