@@ -10,6 +10,8 @@
            '(XF86AudioPrev . "mpc prev; ~/bin/music-show")
            '((mod4 g) . "~/bin/music-choose")
            '((mod4 b) . "~/bin/show-power")
+           
+           '((mod4 f) . "pcmanfm ~")
            ;; Lock screen
            '(XF86Calculator . "xlock -mode blank")
            ;; Dropbox status
