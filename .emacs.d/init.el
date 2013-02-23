@@ -11,8 +11,6 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-eshell
-                      evil
-                      evil-leader
                       projectile
                       nrepl
                       geiser
@@ -31,7 +29,7 @@
 (add-to-list 'load-path "/home/samrat/.emacs.d/config")
 (add-to-list 'load-path "/home/samrat/.emacs.d/vendor/powerline")
 
-(require 'samrat-evil)
+;(require 'samrat-evil)
 (require 'samrat-erc)
 (require 'samrat-org)
 (require 'samrat-clojure)
