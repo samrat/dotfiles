@@ -29,7 +29,7 @@
 (add-to-list 'load-path "/home/samrat/.emacs.d/config")
 (add-to-list 'load-path "/home/samrat/.emacs.d/vendor/powerline")
 
-;(require 'samrat-evil)
+(require 'samrat-mail)
 (require 'samrat-erc)
 (require 'samrat-org)
 (require 'samrat-clojure)
@@ -51,6 +51,7 @@
 (require 'projectile)
 (projectile-global-mode)
 (global-set-key (kbd "C-c f") 'projectile-find-file)
+(define-key global-map "\C-cc" 'org-capture)
 
 ;; Mutt support.
 (setq auto-mode-alist
@@ -65,6 +66,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(org-agenda-files (quote ("~/org/media.org" "~/org/nlangp.org" "~/Dropbox/org/projects.org" "~/Dropbox/org/home.org")))
  '(safe-local-variable-values (quote ((less-css-output-directory . "../stylesheets") (less-css-compile-at-save . t) (whitespace-line-column . 80) (lexical-binding . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
