@@ -11,7 +11,6 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-eshell
-                      projectile
                       nrepl
                       geiser
                       rainbow-delimiters
@@ -46,19 +45,6 @@
 (add-hook 'geiser-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'geiser-mode-hook 'paredit-mode)
-
-;; Find file
-(require 'projectile)
-(projectile-global-mode)
-(global-set-key (kbd "C-c f") 'projectile-find-file)
-(define-key global-map "\C-cc" 'org-capture)
-
-;; Mutt support.
-(setq auto-mode-alist
-      (append
-       '(("/tmp/mutt.*" . mail-mode)
-         )
-       auto-mode-alist))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -1,6 +1,6 @@
-(require 'org-latex)
 (setq org-directory "~/Dropbox/org")
 (setq org-agenda-files (list org-directory))
+(define-key global-map "\C-cc" 'org-capture)
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "todo.org" "Unsorted") "* TODO %i%?")
