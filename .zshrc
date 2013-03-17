@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="prose"
+ZSH_THEME="steeef"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -38,7 +38,9 @@ autoload -U compinit
 compinit
 
 # Customize to your needs...
-export PATH=/home/samrat/.gem/ruby/1.9.1/:/root/.gem/ruby/1.9.1/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/samrat/.gem/ruby/1.9.1/bin
+export PATH=/home/samrat/.gem/ruby/1.9.1/:/root/.gem/ruby/1.9.1/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/samrat/.gem/ruby/1.9.1/bin:/usr/local/texlive/2012/bin/x86_64-linux
+export MANPATH=/usr/local/texlive/2012/texmf/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2012/texmf/doc/info:$INFOPATH
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7.1/site-packages"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 export EDITOR="vim"
