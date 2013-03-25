@@ -1,14 +1,23 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
 (require 'mu4e)
-(setq
- mu4e-maildir       "~/.mail"     ;; top-level Maildir
- mu4e-sent-folder   "/samratme/Sent"       ;; folder for sent messages
- mu4e-drafts-folder "/samratme/Drafts"     ;; unfinished messages
- mu4e-trash-folder  "/samratme/trash"      ;; trashed messages
- mu4e-refile-folder "/samratme/archive"    ;; saved messages
- mu4e-get-mail-command "offlineimap"
- mu4e-show-images t )
+
+;; general settings
+(setq mu4e-html2text-command "html2text -width 72"
+      mu4e-confirm-quit nil ; just quit
+      mu4e-get-mail-command "offlineimap"
+      mu4e-show-images t)
+
+(setq mu4e-maildir "~/.mail")
+(setq mu4e-drafts-folder "/[Gmail].Drafts")
+(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
+(setq mu4e-trash-folder  "/[Gmail].Trash")
+
+(setq mu4e-maildir-shortcuts
+      '( ("/INBOX"               . ?i)
+         ("/[Gmail].Sent Mail"   . ?s)
+         ("/[Gmail].Trash"       . ?t)
+         ("/[Gmail].All Mail"    . ?a)))
 
 (require 'smtpmail)
 ;; outgoing
