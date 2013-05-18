@@ -43,8 +43,14 @@ export MANPATH=/usr/local/texlive/2012/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2012/texmf/doc/info:$INFOPATH
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7.1/site-packages"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
-export EDITOR="vim"
-export BROWSER="chromium"
+export EDITOR="emacsclient -t"
+export BROWSER="conkeror"
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export ARDUINO_DIR=/usr/share/arduino
+export ARDMK_DIR=/usr/local
+export AVR_TOOLS_DIR=/usr
 
 # Z
 source /usr/bin/z.sh
@@ -69,3 +75,6 @@ alias c='clear'
 
 alias e=emacsclient -t
 alias ec=emacsclient -c
+
+alias batti='$HOME/lib/batti/main.sh -g 4 -t'
+PATH="/usr/local/heroku/bin:$PATH"
