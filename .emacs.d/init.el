@@ -13,6 +13,7 @@
                       starter-kit-eshell
                       nrepl
                       geiser
+                      magit
                       rainbow-delimiters
                       auto-complete
                       ac-nrepl
@@ -54,6 +55,8 @@
 ;; Show autocompletions only on TAB
 (ac-set-trigger-key "TAB")
 (setq ac-auto-start nil)
+
+(setq scheme-program-name "racket")
 
 ;; Rainbow delimiters
 (require 'rainbow-delimiters)
