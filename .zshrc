@@ -38,7 +38,7 @@ autoload -U compinit
 compinit
 
 # Customize to your needs...
-export PATH=/home/samrat/.gem/ruby/1.9.1/:/root/.gem/ruby/1.9.1/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/samrat/.gem/ruby/1.9.1/bin:/usr/local/texlive/2012/bin/x86_64-linux
+export PATH=/home/samrat/.gem/ruby/1.9.1/:/root/.gem/ruby/1.9.1/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/samrat/.gem/ruby/1.9.1/bin:/usr/local/texlive/2012/bin/x86_64-linux:/home/samrat/.gem/ruby/2.0.0/bin:/home/samrat/bin
 export MANPATH=/usr/local/texlive/2012/texmf/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2012/texmf/doc/info:$INFOPATH
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7.1/site-packages"

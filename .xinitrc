@@ -10,7 +10,8 @@ urxvtd&
 xbindkeys
 dunst&
 unclutter&
-~/bin/low-battery-notify&
+low-battery-notify&
+ctrl-fix
 
 # Random wallpaper each time X starts
 find ~/.wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
