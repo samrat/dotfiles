@@ -76,5 +76,8 @@ alias c='clear'
 alias e=emacsclient -t
 alias ec=emacsclient -c
 
+alias qwerty='setxkbmap -layout us; ctrl-fix'
+alias colemak='setxkbmap us -variant colemak; ctrl-fix'
+
 alias batti='$HOME/lib/batti/main.sh -g 4 -t'
 PATH="/usr/local/heroku/bin:$PATH"
