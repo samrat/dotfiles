@@ -1,4 +1,5 @@
 (add-hook 'nrepl-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'nrepl-interaction-mode-hook
   'nrepl-turn-on-eldoc-mode)
@@ -42,5 +43,9 @@
                      (0 (progn (compose-region (match-beginning 1)
                                                (match-end 1) "∈")
                                nil))))))
+
+(defadvice nrepl-default-err-handler (after nrepl-focus-errors activate)
+  "Focus the error buffer after errors, like Emacs normally does."
+  (select-window (get-buffer-window "*nrepl-error*")))
 
 (provide 'samrat-clojure)
