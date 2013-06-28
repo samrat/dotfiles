@@ -8,7 +8,7 @@
            '(XF86AudioPlay . "mpc toggle; ~/bin/music-show")
            '(XF86AudioNext . "mpc next; ~/bin/music-show")
            '(XF86AudioPrev . "mpc prev; ~/bin/music-show")
-           '((mod4 g) . "~/bin/music-choose")
+           '((mod4 g) . "~/bin/dmenu-mpd/dmenu-mpd -t")
            '((mod4 b) . "~/bin/show-power")
            
            '((mod4 f) . "pcmanfm ~")
