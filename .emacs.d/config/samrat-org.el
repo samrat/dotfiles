@@ -32,8 +32,10 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((clojure . t)
-   (scheme . t)))
+   (scheme . t)
+   (python . t)))
 
+(setq org-confirm-babel-evaluate nil)
 (setq org-src-window-setup 'current-window)
 
 (eval-after-load "ob-clojure"
@@ -43,7 +45,7 @@
      (let ((result (nrepl-eval (org-babel-expand-body:clojure body params))))
        (car (read-from-string (plist-get result :value))))))
 
-(require 'org-latex)
+(require 'ox-latex)
 (add-to-list 'org-latex-classes
              '("article"
                "\\documentclass{article}"
@@ -53,22 +55,25 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-(setq org-latex-to-pdf-process (list "latexmk -f -pdf %f"))
+(setq org-latex-to-pdf-process (list "pdflatex %f"))
 
-(setq org-publish-project-alist
-      '(
-        ( "org-blog"
-          :base-directory "~/notes/blog"
-          :base-extension "org"
-          :publishing-directory "/tmp"
-          :recursive t
-          :publishing-function org-publish-org-to-html
-          :html-extension "html"
-          :body-only t
-          :style-include-scripts nil
-          :style nil
-          :style-extra nil)
-        ("blog" :components ("org-blog")))
-      )
+(defvar blog-directory "/home/samrat/code/samrat.github.com/src/posts"
+  "Path to blog src")
+
+(defun new-post (title)
+  "Create and visit a new .org file in dir named $date-$title.org, ie
+Octopress/Jekyll style"
+  (interactive "sPost title: ")
+  (let* ((date (format-time-string "%Y-%m-%d"))
+         (title-no-spaces (replace-regexp-in-string " +" "-" (downcase title)))
+         (dirname (file-name-as-directory blog-directory))
+         (filename (format (concat dirname "%s-%s.org") date title-no-spaces)))
+    (find-file filename)
+    (rename-buffer title)
+    ;;(org-insert-export-options-template)
+    (rename-buffer filename)))
+
+(defun insert-current-date () (interactive)
+    (insert (shell-command-to-string "date --rfc-822")))
 
 (provide 'samrat-org)
