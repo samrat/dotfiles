@@ -24,4 +24,4 @@
            '((mod4 XF86AudioPlay) . "urxvtc -e bash -c 'ncmpcpp'")
 
            ;; Print screen
-           '(print . "scrot")))
+           '(Print . "scrot -e 'mv $f ~/images/'")))
