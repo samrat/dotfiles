@@ -36,6 +36,7 @@
 (require 'samrat-erc)
 (require 'samrat-org)
 (require 'samrat-clojure)
+(require 'samrat-haskell)
 
 (require 'server)
 (unless (server-running-p)
