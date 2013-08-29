@@ -33,7 +33,10 @@
  'org-babel-load-languages
  '((clojure . t)
    (scheme . t)
-   (python . t)))
+   (python . t)
+   (sh . t)
+   (R . t)
+   (haskell . t)))
 
 (setq org-confirm-babel-evaluate nil)
 (setq org-src-window-setup 'current-window)
@@ -57,23 +60,21 @@
 
 (setq org-latex-to-pdf-process (list "pdflatex %f"))
 
-(defvar blog-directory "/home/samrat/code/samrat.github.com/src/posts"
-  "Path to blog src")
+(setq org-babel-default-header-args
+           (cons '(:exports . "code")
+                 (assq-delete-all :exports org-babel-default-header-args)))
 
-(defun new-post (title)
-  "Create and visit a new .org file in dir named $date-$title.org, ie
-Octopress/Jekyll style"
-  (interactive "sPost title: ")
-  (let* ((date (format-time-string "%Y-%m-%d"))
-         (title-no-spaces (replace-regexp-in-string " +" "-" (downcase title)))
-         (dirname (file-name-as-directory blog-directory))
-         (filename (format (concat dirname "%s-%s.org") date title-no-spaces)))
-    (find-file filename)
-    (rename-buffer title)
-    ;;(org-insert-export-options-template)
-    (rename-buffer filename)))
+(setq org-publish-project-alist
+      '(("blog"
+         :base-directory "~/code/samrat.github.com/src/posts"
+         :base-extension "org"
+         :publishing-directory "~/code/samrat.github.com/src/posts"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :html-extension "md"
+         :htmlized-source t
+         :body-only t)))
 
-(defun insert-current-date () (interactive)
-    (insert (shell-command-to-string "date --rfc-822")))
+(setq org-html-htmlize-output-type 'css)
 
 (provide 'samrat-org)
