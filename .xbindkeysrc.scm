@@ -13,7 +13,9 @@
            
            '((mod4 f) . "pcmanfm ~")
            ;; Lock screen
-           '(XF86Calculator . "xlock -mode blank")
+           '(XF86Calculator . "i3lock && sudo pm-suspend")
+	   '((mod4 XF86Calculator) . "i3lock && sudo pm-hibernate")
+
            ;; Dropbox status
            '((mod4 d) . "~/bin/dropbox-status")
            
