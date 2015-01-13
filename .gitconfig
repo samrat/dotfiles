@@ -1,14 +1,5 @@
 [user]
 	name = Samrat Man Singh
         email = samratmansingh@gmail.com
-[color]
-        branch = auto
-        diff = auto
-        interactive = auto
-        status = auto
-[push]
-	default = simple
 [alias]
-	lg = log --graph --oneline --decorate --abbrev-commit
-[core]
-	editor = emacsclient -t
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
