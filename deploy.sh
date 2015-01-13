@@ -27,5 +27,6 @@ ln -s `pwd`/.hgrc ~/
 ln -s `pwd`/.hgignore ~/
 ln -s `pwd`/tmux.conf ~/.tmux.conf
 ln -s `pwd`/.Xdefaults ~/.Xdefaults
+ln -s `pwd`/dunstrc ~/.config/dunst/
 
 ln -s `pwd`/xmonad-config/.xmonad ~/
