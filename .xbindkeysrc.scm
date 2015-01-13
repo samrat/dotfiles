@@ -11,7 +11,6 @@
            '((mod4 g) . "~/bin/dmenu-mpd/dmenu-mpd -t")
            '((mod4 b) . "~/bin/show-power")
            
-           '((mod4 f) . "pcmanfm ~")
            ;; Lock screen
            '(XF86Calculator . "i3lock && sudo pm-suspend")
 	   '((mod4 XF86Calculator) . "i3lock && sudo pm-hibernate")
@@ -19,9 +18,6 @@
            ;; Dropbox status
            '((mod4 d) . "~/bin/dropbox-status")
            
-           ;; Weechat
-           '((mod4 i) . "urxvtc -e bash -c 'weechat-curses'")
-
            ;; Ncmpcpp
            '((mod4 XF86AudioPlay) . "urxvtc -e bash -c 'ncmpcpp'")
 
