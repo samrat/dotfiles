@@ -12,8 +12,14 @@ do
         battery_level=`acpi -b | sed 's/.*[dg], //g;s/\%,.*//g'`
         
         [ $battery_level -le $low_battery ] && \
-        notify-send -u critical -i "$icon" -t 15000 \
-        "Battery level is low!" "Only $battery_level% of the charge remains."
+            notify-send -u critical -i "$icon" -t 15000 \
+                        "Battery level is low!" "Only $battery_level% of the charge remains."
+
+        [ $battery_level -le $critical_level ] && \
+            notify-send -u critical -i "$icon" -t 50 \
+                        "Battery level is low!" "Hibernating in 60 seconds" &&
+            sleep 60 &&
+            i3lock && sudo pm-hibernate
     fi
     sleep $interval
 done
